@@ -20,6 +20,7 @@ py_library(
     name = "load_dragnn_cc_impl_py",
     srcs = ["load_dragnn_cc_impl.py"],
     data = [":dragnn_cc_impl.so"],
+    srcs_version = "PY3",
 )
 
 py_library(
@@ -34,6 +35,7 @@ py_library(
         "@org_tensorflow//tensorflow:tensorflow_py",
         "@org_tensorflow//tensorflow/core:protos_all_py",
     ],
+    srcs_version = "PY3",
 )
 
 py_library(
@@ -50,6 +52,7 @@ py_library(
         "@org_tensorflow//tensorflow:tensorflow_py",
         "@org_tensorflow//tensorflow/core:protos_all_py",
     ],
+    srcs_version = "PY3",
 )
 
 py_library(
@@ -59,12 +62,14 @@ py_library(
         "@org_tensorflow//tensorflow:tensorflow_py",
         "@org_tensorflow//tensorflow/core:protos_all_py",
     ],
+    srcs_version = "PY3",
 )
 
 py_library(
     name = "dragnn_ops",
     srcs = ["dragnn_ops.py"],
     deps = [],
+    srcs_version = "PY3",
 )
 
 py_library(
@@ -82,6 +87,7 @@ py_library(
         "@org_tensorflow//tensorflow:tensorflow_py",
         "@org_tensorflow//tensorflow/core:protos_all_py",
     ],
+    srcs_version = "PY3",
 )
 
 py_library(
@@ -95,6 +101,7 @@ py_library(
         "@org_tensorflow//tensorflow:tensorflow_py",
         "@org_tensorflow//tensorflow/core:protos_all_py",
     ],
+    srcs_version = "PY3",
 )
 
 py_library(
@@ -102,6 +109,7 @@ py_library(
     srcs = ["render_parse_tree_graphviz.py"],
     deps = [
     ],
+    srcs_version = "PY3",
 )
 
 py_test(
@@ -112,6 +120,7 @@ py_test(
         "//syntaxnet:sentence_py_pb2",
         "@org_tensorflow//tensorflow:tensorflow_py",
     ],
+    srcs_version = "PY3",
 )
 
 py_library(
@@ -120,6 +129,7 @@ py_library(
     deps = [
         "//dragnn/protos:spec_py_pb2",
     ],
+    srcs_version = "PY3",
 )
 
 py_test(
@@ -130,6 +140,7 @@ py_test(
         ":spec_builder",
         "@org_tensorflow//tensorflow:tensorflow_py",
     ],
+    srcs_version = "PY3",
 )
 
 py_library(
@@ -138,6 +149,7 @@ py_library(
     deps = [
         "//syntaxnet:parser_ops",
     ],
+    srcs_version = "PY3",
 )
 
 py_binary(
@@ -149,6 +161,7 @@ py_binary(
     deps = [
         "//dragnn/protos:trace_py_pb2",
     ],
+    srcs_version = "PY3",
 )
 
 py_test(
@@ -160,6 +173,7 @@ py_test(
         "//dragnn/protos:trace_py_pb2",
         "@org_tensorflow//tensorflow:tensorflow_py",
     ],
+    srcs_version = "PY3",
 )
 
 py_library(
@@ -171,6 +185,7 @@ py_library(
         "@org_tensorflow//tensorflow:tensorflow_py",
         "@org_tensorflow//tensorflow/core:protos_all_py",
     ],
+    srcs_version = "PY3",
 )
 
 # Tests
@@ -194,6 +209,7 @@ py_test(
         "@org_tensorflow//tensorflow:tensorflow_py",
         "@org_tensorflow//tensorflow/core:protos_all_py",
     ],
+    srcs_version = "PY3",
 )
 
 py_test(
@@ -208,6 +224,7 @@ py_test(
         "@org_tensorflow//tensorflow:tensorflow_py",
         "@org_tensorflow//tensorflow/core:protos_all_py",
     ],
+    srcs_version = "PY3",
 )
 
 py_test(
@@ -233,6 +250,7 @@ py_test(
         "@org_tensorflow//tensorflow:tensorflow_py",
         "@org_tensorflow//tensorflow/core:protos_all_py",
     ],
+    srcs_version = "PY3",
 )
 
 py_test(
@@ -249,6 +267,7 @@ py_test(
         "@org_tensorflow//tensorflow:tensorflow_py",
         "@org_tensorflow//tensorflow/core:protos_all_py",
     ],
+    srcs_version = "PY3",
 )
 
 py_test(
@@ -263,6 +282,7 @@ py_test(
         "@org_tensorflow//tensorflow:tensorflow_py",
         "@org_tensorflow//tensorflow/core:protos_all_py",
     ],
+    srcs_version = "PY3",
 )
 
 py_library(
@@ -276,6 +296,7 @@ py_library(
         "@org_tensorflow//tensorflow:tensorflow_py",
         "@org_tensorflow//tensorflow/core:protos_all_py",
     ],
+    srcs_version = "PY3",
 )
 
 py_library(
@@ -286,6 +307,7 @@ py_library(
         "//syntaxnet:task_spec_py_pb2",
         "@org_tensorflow//tensorflow:tensorflow_py",
     ],
+    srcs_version = "PY3",
 )
 
 py_test(
@@ -298,6 +320,7 @@ py_test(
         "//syntaxnet:parser_trainer",
         "@org_tensorflow//tensorflow:tensorflow_py",
     ],
+    srcs_version = "PY3",
 )
 
 py_library(
@@ -308,6 +331,7 @@ py_library(
         "//syntaxnet/util:check",
         "@org_tensorflow//tensorflow:tensorflow_py",
     ],
+    srcs_version = "PY3",
 )
 
 py_test(
@@ -318,6 +342,7 @@ py_test(
         "//syntaxnet:sentence_py_pb2",
         "@org_tensorflow//tensorflow:tensorflow_py",
     ],
+    srcs_version = "PY3",
 )
 
 py_library(
@@ -330,6 +355,7 @@ py_library(
         "//syntaxnet/util:check",
         "@org_tensorflow//tensorflow:tensorflow_py",
     ],
+    srcs_version = "PY3",
 )
 
 py_test(
@@ -343,6 +369,7 @@ py_test(
         "//syntaxnet:parser_trainer",
         "@org_tensorflow//tensorflow:tensorflow_py",
     ],
+    srcs_version = "PY3",
 )
 
 py_library(
@@ -352,6 +379,7 @@ py_library(
         "//syntaxnet/util:check",
         "@org_tensorflow//tensorflow:tensorflow_py",
     ],
+    srcs_version = "PY3",
 )
 
 py_test(
@@ -361,6 +389,7 @@ py_test(
         ":digraph_ops",
         "@org_tensorflow//tensorflow:tensorflow_py",
     ],
+    srcs_version = "PY3",
 )
 
 py_library(
@@ -372,4 +401,5 @@ py_library(
         "//syntaxnet/util:check",
         "@org_tensorflow//tensorflow:tensorflow_py",
     ],
+    srcs_version = "PY3",
 )

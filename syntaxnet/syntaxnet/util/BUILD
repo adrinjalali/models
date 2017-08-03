@@ -9,17 +9,20 @@ py_library(
         "@org_tensorflow//tensorflow:tensorflow_py",
         "@org_tensorflow//tensorflow/core:protos_all_py",
     ],
+    srcs_version = "PY3",
 )
 
 py_library(
     name = "check",
     srcs = ["check.py"],
+    srcs_version = "PY3",
 )
 
 py_library(
     name = "pyregistry_test_base",
     testonly = 1,
     srcs = ["registry_test_base.py"],
+    srcs_version = "PY3",
 )
 
 py_library(
@@ -29,6 +32,7 @@ py_library(
     deps = [
         ":pyregistry_test_base",
     ],
+    srcs_version = "PY3",
 )
 
 # Note: py_test() requires the name of the build rule and the source file to
@@ -44,6 +48,7 @@ py_test(
         "@org_tensorflow//tensorflow:tensorflow_py",
         "@org_tensorflow//tensorflow/core:protos_all_py",
     ],
+    srcs_version = "PY3",
 )
 
 py_test(
@@ -55,4 +60,5 @@ py_test(
         "@org_tensorflow//tensorflow:tensorflow_py",
         "@org_tensorflow//tensorflow/core:protos_all_py",
     ],
+    srcs_version = "PY3",
 )

@@ -3,6 +3,7 @@ py_binary(
     srcs = ["tutorial_1.py"],
     data = [":data"],
     deps = [":tutorial-deps"],
+    srcs_version = "PY3",
 )
 
 py_binary(
@@ -10,6 +11,7 @@ py_binary(
     srcs = ["tutorial_2.py"],
     data = [":data"],
     deps = [":tutorial-deps"],
+    srcs_version = "PY3",
 )
 
 py_library(
@@ -29,6 +31,7 @@ py_library(
         "@org_tensorflow//tensorflow:tensorflow_py",
         "@org_tensorflow//tensorflow/core:protos_all_py",
     ],
+    srcs_version = "PY3",
 )
 
 filegroup(

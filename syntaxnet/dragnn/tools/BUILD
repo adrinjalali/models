@@ -17,6 +17,7 @@ py_binary(
         "//dragnn/python:evaluation",
         "//dragnn/python:spec_builder",
     ],
+    srcs_version = "PY3",
 )
 
 py_binary(
@@ -32,6 +33,7 @@ py_binary(
         "//dragnn/python:evaluation",
         "//dragnn/python:spec_builder",
     ],
+    srcs_version = "PY3",
 )
 
 py_binary(
@@ -46,6 +48,7 @@ py_binary(
         "//dragnn/python:dragnn_ops",
         "//dragnn/python:spec_builder",
     ],
+    srcs_version = "PY3",
 )
 
 py_binary(
@@ -60,6 +63,7 @@ py_binary(
         "//dragnn/python:trainer_lib",
         "//syntaxnet:task_spec_py_pb2",
     ],
+    srcs_version = "PY3",
 )
 
 py_binary(
@@ -74,6 +78,7 @@ py_binary(
         "//dragnn/python:trainer_lib",
         "//syntaxnet:task_spec_py_pb2",
     ],
+    srcs_version = "PY3",
 )
 
 py_binary(
@@ -94,6 +99,7 @@ py_binary(
         "@org_tensorflow//tensorflow:tensorflow_py",
         "@org_tensorflow//tensorflow/core:protos_all_py",
     ],
+    srcs_version = "PY3",
 )
 
 py_binary(
@@ -118,6 +124,7 @@ py_binary(
         "@org_tensorflow//tensorflow:tensorflow_py",
         "@org_tensorflow//tensorflow/core:protos_all_py",
     ],
+    srcs_version = "PY3",
 )
 
 sh_test(
@@ -149,6 +156,7 @@ py_binary(
     deps = [
         ":all_in_one_components",
     ],
+    srcs_version = "PY3",
 )
 
 py_binary(
@@ -158,6 +166,7 @@ py_binary(
     deps = [
         ":all_in_one_components",
     ],
+    srcs_version = "PY3",
 )
 
 # Shared/common components for all tools.
@@ -176,6 +185,7 @@ py_library(
         "@org_tensorflow//tensorflow:tensorflow_py",
         "@org_tensorflow//tensorflow/core:protos_all_py",
     ],
+    srcs_version = "PY3",
 )
 
 # This should include just about everything, suitable for Jupyter notebooks or
@@ -195,4 +205,5 @@ py_library(
         "//dragnn/python:visualization",
         "//syntaxnet:task_spec_py_pb2",
     ],
+    srcs_version = "PY3",
 )

@@ -6,4 +6,5 @@ py_binary(
         "//dragnn/python:spec_builder",
         "@org_tensorflow//tensorflow:tensorflow_py",
     ],
+    srcs_version = "PY3",
 )

@@ -745,6 +745,7 @@ py_library(
     name = "load_parser_ops_py",
     srcs = ["load_parser_ops.py"],
     data = [":parser_ops.so"],
+    srcs_version = "PY3",
 )
 
 py_library(
@@ -754,6 +755,7 @@ py_library(
         ":parser_ops",
         ":load_parser_ops_py",
     ],
+    srcs_version = "PY3",
 )
 
 py_library(
@@ -765,6 +767,7 @@ py_library(
         "@org_tensorflow//tensorflow:tensorflow_py",
         "@org_tensorflow//tensorflow/core:protos_all_py",
     ],
+    srcs_version = "PY3",
 )
 
 py_library(
@@ -773,6 +776,7 @@ py_library(
     deps = [
         ":graph_builder",
     ],
+    srcs_version = "PY3",
 )
 
 py_binary(
@@ -783,6 +787,7 @@ py_binary(
         ":structured_graph_builder",
         ":task_spec_py_pb2",
     ],
+    srcs_version = "PY3",
 )
 
 py_binary(
@@ -794,6 +799,7 @@ py_binary(
         ":structured_graph_builder",
         ":task_spec_py_pb2",
     ],
+    srcs_version = "PY3",
 )
 
 py_binary(
@@ -803,6 +809,7 @@ py_binary(
         ":graph_builder",
         ":sentence_py_pb2",
     ],
+    srcs_version = "PY3",
 )
 
 # py tests
@@ -816,6 +823,7 @@ py_test(
         ":sentence_py_pb2",
         ":task_spec_py_pb2",
     ],
+    srcs_version = "PY3",
 )
 
 py_test(
@@ -827,6 +835,7 @@ py_test(
         ":sentence_py_pb2",
         ":task_spec_py_pb2",
     ],
+    srcs_version = "PY3",
 )
 
 py_test(
@@ -840,6 +849,7 @@ py_test(
         ":graph_builder",
         ":sparse_py_pb2",
     ],
+    srcs_version = "PY3",
 )
 
 py_test(
@@ -851,6 +861,7 @@ py_test(
     deps = [
         ":structured_graph_builder",
     ],
+    srcs_version = "PY3",
 )
 
 py_test(
@@ -865,6 +876,7 @@ py_test(
         ":graph_builder",
         ":sparse_py_pb2",
     ],
+    srcs_version = "PY3",
 )
 
 sh_test(

@@ -17,6 +17,7 @@
 
 
 import os
+import sys
 import os.path
 import time
 import tempfile
@@ -160,6 +161,8 @@ def main(unused_argv):
   with tf.Session() as sess:
     Eval(sess)
 
+  print("0000000000000000000000000000000000000000000000000000", file=sys.stderr)
+  print(os.environ, file=sys.stderr)
 
 if __name__ == '__main__':
   tf.app.run()
