@@ -97,7 +97,7 @@ def main(argv):
   with open('dragnn_tutorial_2.html', 'w') as f:
     f.write(
         visualization.trace_html(
-            traces[0], height='400px', master_spec=master_spec).encode('utf-8'))
+            traces[0], height='400px', master_spec=master_spec))
 
 
 if __name__ == '__main__':

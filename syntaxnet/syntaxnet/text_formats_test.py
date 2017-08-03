@@ -89,7 +89,7 @@ class TextFormatsTest(test_util.TensorFlowTestCase):
   def CheckUntokenizedDoc(self, sentence, words, starts, ends):
     self.WriteContext('untokenized-text')
     logging.info('Writing text file to: %s', self.corpus_file)
-    with open(self.corpus_file, 'w') as f:
+    with open(self.corpus_file, 'w', encoding='utf-8') as f:
       f.write(sentence)
     sentence, _ = gen_parser_ops.document_source(
         task_context=self.context_file, batch_size=1)
@@ -99,7 +99,7 @@ class TextFormatsTest(test_util.TensorFlowTestCase):
       self.assertEqual(len(sentence_doc.token), len(starts))
       self.assertEqual(len(sentence_doc.token), len(ends))
       for i, token in enumerate(sentence_doc.token):
-        self.assertEqual(token.word.encode('utf-8'), words[i])
+        self.assertEqual(token.word, words[i])
         self.assertEqual(token.start, starts[i])
         self.assertEqual(token.end, ends[i])
 
@@ -134,8 +134,8 @@ class TextFormatsTest(test_util.TensorFlowTestCase):
         task_context=self.context_file, batch_size=1)
 
     # Expected texts, words, and start/end offsets.
-    expected_text = u'We\'ve moved on.'
-    expected_words = [u'We', u'\'ve', u'moved', u'on', u'.']
+    expected_text = 'We\'ve moved on.'
+    expected_words = ['We', '\'ve', 'moved', 'on', '.']
     expected_starts = [0, 2, 6, 12, 14]
     expected_ends = [1, 4, 10, 13, 14]
     with self.test_session() as sess:
@@ -179,8 +179,8 @@ token {
         task_context=self.context_file, batch_size=1)
 
     # Expected texts, words, and start/end offsets.
-    expected_text = u'fair enough; you people have eaten me.'
-    expected_words = [u'fair', u'enough']
+    expected_text = 'fair enough; you people have eaten me.'
+    expected_words = ['fair', 'enough']
     expected_starts = [0, 5]
     expected_ends = [3, 10]
     with self.test_session() as sess:
@@ -218,7 +218,7 @@ token {
     self.WriteContext('segment-train-data')
 
     # Prepare test sentence.
-    with open(self.corpus_file, 'w') as f:
+    with open(self.corpus_file, 'w', encoding='utf-8') as f:
       f.write(''.join(doc_lines))
 
     # Test converted sentence.
@@ -226,8 +226,8 @@ token {
         task_context=self.context_file, batch_size=1)
     with self.test_session() as sess:
       sentence_doc = self.ReadNextDocument(sess, sentence)
-      self.assertEqual(doc_text.decode('utf-8'), sentence_doc.text)
-      self.assertEqual([t.decode('utf-8') for t in doc_words],
+      self.assertEqual(doc_text, sentence_doc.text)
+      self.assertEqual([t for t in doc_words],
                        [t.word for t in sentence_doc.token])
       self.assertEqual(break_levels,
                        [t.break_level for t in sentence_doc.token])

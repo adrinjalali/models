@@ -70,8 +70,8 @@ class BaseLSTMNetwork(dragnn.NetworkUnitInterface):
         component.spec.network_unit.parameters,
         defaults=attr_defaults)
 
-    self._hidden_layer_sizes = map(int,
-                                   self._attrs['hidden_layer_sizes'].split(','))
+    self._hidden_layer_sizes = list(map(int,
+                                   self._attrs['hidden_layer_sizes'].split(',')))
 
     self._input_dropout_rate = self._attrs['input_dropout_rate']
     if self._input_dropout_rate < 0.0:
@@ -196,7 +196,7 @@ class BaseLSTMNetwork(dragnn.NetworkUnitInterface):
     with tf.variable_scope(
         'cell', reuse=None, custom_getter=_custom_getter) as scope:
       function(scope)
-    self._params.extend(created_vars.values())
+    self._params.extend(list(created_vars.values()))
 
   def _apply_with_captured_variables(self, function):
     """Applies a function using previously-captured variables.

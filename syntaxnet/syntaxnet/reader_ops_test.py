@@ -109,7 +109,7 @@ class ParsingReaderOpsTest(test_util.TensorFlowTestCase):
       parser.AddTraining(self._task_context,
                          batch_size,
                          corpus_name='training-corpus')
-      sess.run(parser.inits.values())
+      sess.run(list(parser.inits.values()))
       while True:
         tf_epochs, tf_cost, _ = sess.run(
             [parser.training['epochs'], parser.training['cost'],
@@ -169,7 +169,7 @@ class ParsingReaderOpsTest(test_util.TensorFlowTestCase):
 
   def _token_embedding(self, token, embedding):
     e = dictionary_pb2.TokenEmbedding()
-    e.token = token
+    e.token = token.encode('utf-8')
     e.vector.values.extend(embedding)
     return e.SerializeToString()
 

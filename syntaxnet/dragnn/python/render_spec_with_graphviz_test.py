@@ -15,9 +15,9 @@
 
 """Tests for render_spec_with_graphviz."""
 
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function
+
+
+
 
 from tensorflow.python.platform import googletest
 from dragnn.protos import spec_pb2
@@ -59,15 +59,16 @@ class RenderSpecWithGraphvizTest(googletest.TestCase):
   def test_constructs_simple_graph(self):
     master_spec = _make_basic_master_spec()
     contents = render_spec_with_graphviz.master_spec_graph(master_spec)
-    self.assertIn('lookahead', contents)
-    self.assertIn('<polygon', contents)
-    self.assertIn('roboto, helvetica, arial', contents)
-    self.assertIn('FeedForwardNetwork', contents)
+    print(contents)
+    self.assertIn(b'lookahead', contents)
+    self.assertIn(b'<polygon', contents)
+    self.assertIn(b'roboto, helvetica, arial', contents)
+    self.assertIn(b'FeedForwardNetwork', contents)
     # Graphviz currently over-escapes hyphens.
-    self.assertTrue(('arc-standard' in contents) or
-                    ('arc&#45;standard' in contents))
-    self.assertIn('input.focus', contents)
-    self.assertTrue('input.word' not in contents,
+    self.assertTrue((b'arc-standard' in contents) or
+                    (b'arc&#45;standard' in contents))
+    self.assertIn(b'input.focus', contents)
+    self.assertTrue(b'input.word' not in contents,
                     "We don't yet show fixed features")
 
 

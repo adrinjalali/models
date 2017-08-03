@@ -101,7 +101,7 @@ def _convert_to_char_corpus(corpus):
 def _get_steps(steps_flag, epochs_flag, corpus_length):
   """Converts the |steps_flag| or |epochs_flag| into a list of step counts."""
   if steps_flag:
-    return map(int, steps_flag.split(','))
+    return list(map(int, steps_flag.split(',')))
   return [corpus_length * int(epochs) for epochs in epochs_flag.split(',')]
 
 

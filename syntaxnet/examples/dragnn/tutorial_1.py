@@ -1,7 +1,7 @@
 """First example--RNN POS tagger."""
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function
+
+
+
 
 import os.path
 
@@ -70,7 +70,7 @@ def main(argv):
         dry_run['traces'], feed_dict={dry_run['input_batch']: training_set})
 
   with open('dragnn_tutorial_1.html', 'w') as f:
-    f.write(visualization.trace_html(traces[0], height='300px').encode('utf-8'))
+    f.write(visualization.trace_html(traces[0], height='300px'))
 
 
 if __name__ == '__main__':

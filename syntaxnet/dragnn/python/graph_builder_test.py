@@ -245,7 +245,7 @@ class GraphBuilderTest(test_util.TensorFlowTestCase):
     master_spec = spec_pb2.MasterSpec()
     testdata = os.path.join(FLAGS.test_srcdir,
                             'dragnn/core/testdata')
-    with file(os.path.join(testdata, spec_path), 'r') as fin:
+    with open(os.path.join(testdata, spec_path), 'r') as fin:
       text_format.Parse(fin.read().replace('TESTDATA', testdata), master_spec)
       return master_spec
 
@@ -411,7 +411,7 @@ class GraphBuilderTest(test_util.TensorFlowTestCase):
           expected_num_actions = 4 * num_evaluated_components
         if (correct_val != total_val or correct_val != expected_num_actions or
             total_val != expected_num_actions):
-          for c in xrange(len(master_spec.component)):
+          for c in range(len(master_spec.component)):
             logging.error('component %s:\nname=%s\ntotal=%s\ncorrect=%s', c,
                           master_spec.component[c].name, eval_res_val[2 * c],
                           eval_res_val[2 * c + 1])
@@ -540,7 +540,7 @@ class GraphBuilderTest(test_util.TensorFlowTestCase):
     spec.component[0].training_beam_size = 8
 
     # The training run should fail at runtime rather than build time.
-    with self.assertRaisesRegexp(tf.errors.InvalidArgumentError,
+    with self.assertRaisesRegex(tf.errors.InvalidArgumentError,
                                  r'\[Not implemented.\]'):
       self.RunFullTrainingAndInference(
           'simple-parser',
