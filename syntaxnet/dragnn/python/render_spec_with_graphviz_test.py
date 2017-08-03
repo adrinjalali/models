@@ -59,7 +59,6 @@ class RenderSpecWithGraphvizTest(googletest.TestCase):
   def test_constructs_simple_graph(self):
     master_spec = _make_basic_master_spec()
     contents = render_spec_with_graphviz.master_spec_graph(master_spec)
-    print(contents)
     self.assertIn(b'lookahead', contents)
     self.assertIn(b'<polygon', contents)
     self.assertIn(b'roboto, helvetica, arial', contents)
